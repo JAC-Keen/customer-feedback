@@ -6,7 +6,7 @@
 </head>
 <body>
   <!-- Target DOM Node -->
-  <div id="Keen - Proof of Concept - Feedback Dashboard"></div>
+  <div id="Feedback-Dashboard"></div>
 
   <script src="https://d26b395fwzu5fz.cloudfront.net/keen-analysis-2.0.0.min.js" type="text/javascript"></script>
   <script src="https://d26b395fwzu5fz.cloudfront.net/keen-dataviz-2.0.4.min.js" type="text/javascript"></script>
@@ -17,7 +17,7 @@
     });
 
     var chart = new Keen.Dataviz()
-      .el("#keen-example-chart")
+      .el("#Feedback-Dashboard")
       .height(240)
       .title("Customer_Feedback")
       .type("table")
@@ -27,7 +27,7 @@
       .query("extraction", {
         event_collection: "FormResult",
         filters: [{"operator":"ne","property_name":"score","property_value":0}],
-        timeframe: "this_14_days",
+        timeframe: "this_2_days",
         timezone: "US/Central"
       })
       .then(function(res) {
