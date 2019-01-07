@@ -3,10 +3,13 @@
 <head>
   <meta charset="utf-8">
   <link href="https://d26b395fwzu5fz.cloudfront.net/keen-dataviz-2.0.4.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
   <!-- Target DOM Node -->
+  <img src="keen.png" alt="Keen-Logo" class="center">
   <div id="Feedback-Dashboard"></div>
+  <div id="pac"></div>
 
   <script src="https://d26b395fwzu5fz.cloudfront.net/keen-analysis-2.0.0.min.js" type="text/javascript"></script>
   <script src="https://d26b395fwzu5fz.cloudfront.net/keen-dataviz-2.0.4.min.js" type="text/javascript"></script>
@@ -18,7 +21,7 @@
 
     var chart = new Keen.Dataviz()
       .el("#Feedback-Dashboard")
-      .height(240)
+      .height(600)
       .title("Customer_Feedback")
       .type("table")
       .prepare();
@@ -36,6 +39,29 @@
       .catch(function(err) {
         chart.message(err.message);
       });
+
+
+      // var chart = new Keen.Dataviz()
+      // .el("#pac")
+      // .height(240)
+      // .title("Group_By_Score")
+      // .type("piechart")
+      // .prepare();
+      //
+      // client
+      //   .query("count", {
+      //     event_collection: "FormResult",
+      //     filters: [{"operator":"contains","property_name":"text","property_value":"Dr."}],
+      //     group_by: ["score"],
+      //     timeframe: "this_2_days",
+      //     timezone: "US/Central"
+      //   })
+      //   .then(function(res) {
+      //     chart.data(res).render();
+      //   })
+      //   .catch(function(err) {
+      //     chart.message(err.message);
+      //   });
 
   </script>
 </body>
