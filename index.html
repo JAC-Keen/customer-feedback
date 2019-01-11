@@ -29,8 +29,7 @@
     client
       .query("extraction", {
         event_collection: "FormResult",
-        filters: [{"operator":"ne","property_name":"score","property_value":0}],
-        timeframe: "this_2_days",
+        timeframe: "this_5_days",
         timezone: "US/Central"
       })
       .then(function(res) {
